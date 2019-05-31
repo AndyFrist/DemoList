@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+
+    android:orientation="vertical"
+    tools:context=".activity.SensorManagerActivity">
+
+    <com.example.ex_xuxiaopeng002.myapplication.view.ArcProgressView
+        android:id="@+id/hello"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        app:arcstrokewith="8dp"
+        app:textcolor1="#ff0000"
+        app:textsize1="10dp"
+
+        app:textsize2="19dp" />
+
+    <com.example.ex_xuxiaopeng002.myapplication.view.ChartView
+        android:layout_width="300dp"
+        android:layout_height="340dp" />
+
+    <RelativeLayout
+        android:layout_width="360dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/shape_edittext">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/share_btn" />
+
+        <RadioGroup
+            android:id="@+id/m_radiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/m_radioButton_wk"
+                android:layout_weight="1"
+                android:width="0dp"
+                android:height="35dp"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="微课"
+                android:textColor="@drawable/selector_radio_bg" />
+
+            <RadioButton
+                android:id="@+id/m_radioButton"
+                android:layout_weight="1"
+                android:width="0dp"
+                android:height="35dp"
+                android:button="@null"
+                android:gravity="center"
+
+                android:text="直播"
+                android:textColor="@drawable/selector_radio_bg" />
+
+            <RadioButton
+
+                android:id="@+id/m_radioButton_back"
+                android:layout_weight="1"
+                android:width="0dp"
+                android:height="35dp"
+                android:button="@null"
+                android:gravity="center"
+
+                android:text="回放"
+                android:textColor="@drawable/selector_radio_bg" />
+
+
+        </RadioGroup>
+    </RelativeLayout>
+</LinearLayout>

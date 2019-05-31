@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="acrprogress">
+        <!--进度条粗细-->
+        <attr name="arcstrokewith" format="dimension" />
+        <!--大文字大小-->
+        <attr name="textsize1" format="dimension" />
+        <!--小文字大小-->
+        <attr name="textsize2" format="dimension" />
+        <!--大文字颜色-->
+        <attr name="textcolor1" format="color" />
+        <!--小文字颜色-->
+        <attr name="textcolor2" format="color" />
+        <!--进度条颜色-->
+        <attr name="arccolorfront" format="color" />
+        <!--进度条背景色-->
+        <attr name="arccolorback" format="color" />
+    </declare-styleable>
+</resources>

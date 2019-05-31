@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="div">hello!</div>
+  <img src="" id="img">
+  <script type="text/javascript">
+    var div = document.getElementById('div')
+    var img = document.getElementById('img')
+    window.getImgUrl = function(url) {
+      div.innerText = '图片地址为:' + url;
+      img.setAttribute('src', url)
+    }
+  </script>
+</body>
+</html>

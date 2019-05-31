@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.ex_xuxiaopeng002.myapplication.view.LeftSlideView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/m_leftslideview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_delete"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/layout_content"
+            android:layout_alignBottom="@+id/layout_content"
+            android:layout_toRightOf="@+id/layout_content"
+            android:background="#f00"
+            android:gravity="center"
+            android:text="删 除"
+            android:textColor="#DDFFFFFF"
+            android:textSize="20sp" />
+
+
+        <LinearLayout
+            android:id="@+id/layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="#456" />
+
+            <TextView
+                android:id="@+id/todo"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="#fff"
+                android:gravity="center"
+                android:text="右滑删除" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</com.example.ex_xuxiaopeng002.myapplication.view.LeftSlideView>
