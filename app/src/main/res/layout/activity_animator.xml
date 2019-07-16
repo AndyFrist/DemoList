@@ -1,16 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.ex_xuxiaopeng002.myapplication.view.ReboundScorllView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".activity.AnimatorActivity">
 
-    <ImageView
-        android:id="@+id/target"
-        android:layout_margin="100dp"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@mipmap/ic_launcher" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
 
-</RelativeLayout>
+
+        <ImageView
+            android:id="@+id/target"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="100dp"
+            android:src="@mipmap/ic_launcher" />
+
+
+        <com.example.ex_xuxiaopeng002.myapplication.view.GrowthTextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.ex_xuxiaopeng002.myapplication.view.GrowthTextView
+            android:id="@+id/text2"
+            android:layout_marginTop="@dimen/sp_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <com.example.ex_xuxiaopeng002.myapplication.view.ChartView
+            android:id="@+id/chartview"
+            android:layout_width="300dp"
+            android:layout_height="340dp" />
+
+
+        <com.example.ex_xuxiaopeng002.myapplication.view.AverageTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:background="#ccc"
+            android:minWidth="120dp"
+            app:av_text="总是不经意地想起你"
+            app:av_textColor="#f00"
+            app:av_textSize="23dp" />
+
+
+        <com.example.ex_xuxiaopeng002.myapplication.view.AverageTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:background="#ccc"
+            app:av_text="就是要测试一下"
+            app:av_textColor="#f00"
+            app:av_textSize="23dp" />
+
+        <com.example.ex_xuxiaopeng002.myapplication.view.AverageTextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:background="#ccc"
+            android:minWidth="20dp"
+            app:av_text="哈哈哈"
+            app:av_textColor="#f00"
+            app:av_textSize="23dp" />
+    </LinearLayout>
+
+
+</com.example.ex_xuxiaopeng002.myapplication.view.ReboundScorllView>

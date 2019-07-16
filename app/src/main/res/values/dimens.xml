@@ -2,5 +2,10 @@
 
 
     <dimen name="size_01">1dp</dimen>
+    <dimen name="size_02">2dp</dimen>
+    <dimen name="size_03">3dp</dimen>
+    <dimen name="size_04">4dp</dimen>
+    <dimen name="size_05">5dp</dimen>
+    <dimen name="size_14">14dp</dimen>
 
 </resources>

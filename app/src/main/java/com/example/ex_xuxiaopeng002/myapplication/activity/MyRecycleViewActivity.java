@@ -3,11 +3,13 @@ package com.example.ex_xuxiaopeng002.myapplication.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.ex_xuxiaopeng002.myapplication.R;
 import com.example.ex_xuxiaopeng002.myapplication.adapter.SlideAdapter;
+import com.example.ex_xuxiaopeng002.myapplication.view.ReboundRecycleView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +20,7 @@ import butterknife.ButterKnife;
 public class MyRecycleViewActivity extends AppCompatActivity implements SlideAdapter.IonSlidingViewClickListener {
 
     @BindView(R.id.m_recycler_view)
-    android.support.v7.widget.RecyclerView listView;
+    ReboundRecycleView  listView;
     List<String> mlist;
     SlideAdapter listviewAdapter;
 
@@ -29,7 +31,7 @@ public class MyRecycleViewActivity extends AppCompatActivity implements SlideAda
         ButterKnife.bind(this);
 
         mlist = new ArrayList<>();
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 20; i++) {
             mlist.add("a" + i);
         }
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);

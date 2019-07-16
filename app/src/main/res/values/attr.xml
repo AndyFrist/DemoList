@@ -16,4 +16,22 @@
         <!--进度条背景色-->
         <attr name="arccolorback" format="color" />
     </declare-styleable>
+
+
+
+    <declare-styleable name="average_text">
+        <attr name="av_textSize" format="dimension" />
+        <attr name="av_textColor" format="color" />
+        <attr name="av_text" format="string" />
+    </declare-styleable>
+
+        <!--可回弹RecyclerView的自定义属性-->
+        <declare-styleable name="BounceRecyclerView">
+            <attr name="oritation">
+                <enum name="vertical" value="0"/>
+                <enum name="horizontal" value="1"/>
+            </attr>
+        </declare-styleable>
+
+
 </resources>

@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".activity.HistogramActivity">
 
 
     <SeekBar
         android:id="@+id/seekbara"
-        android:max="100"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="34dp"
+        android:max="100" />
 
 
     <com.example.ex_xuxiaopeng002.myapplication.view.HistogramView
@@ -22,4 +26,11 @@
         android:background="#cccccc"
         android:layerType="software" />
 
-</RelativeLayout>
+
+    <com.example.ex_xuxiaopeng002.myapplication.view.LotteryView
+        android:id="@+id/lottery"
+        android:layout_width="266dp"
+        android:layout_height="266dp"
+        android:layout_marginTop="40dp"
+        android:background="#ccc" />
+</LinearLayout>

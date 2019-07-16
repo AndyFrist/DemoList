@@ -5,12 +5,23 @@
     android:id="@+id/root_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activity.WebViewActivity">
 
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:id="@+id/click"
-        android:text="点击"
+        android:text="点击在线加载PDF"
         android:layout_height="wrap_content" />
+
+<WebView
+    android:id="@+id/webView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+
+
+
+
+
 </LinearLayout>

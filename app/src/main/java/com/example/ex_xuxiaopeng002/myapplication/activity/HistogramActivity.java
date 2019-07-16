@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.example.ex_xuxiaopeng002.myapplication.R;
 import com.example.ex_xuxiaopeng002.myapplication.view.HistogramView;
+import com.example.ex_xuxiaopeng002.myapplication.view.LotteryView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,6 +20,8 @@ public class HistogramActivity extends AppCompatActivity {
     HistogramView myView;
     @BindView(R.id.seekbara)
     SeekBar seekbara;
+    @BindView(R.id.lottery)
+    LotteryView lottery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +34,9 @@ public class HistogramActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
-                Log.d("progress",progress+"");
+                Log.d("progress", progress + "");
 
-                myView.setvoiceRate(progress/100.0);
+                myView.setvoiceRate(progress / 100.0);
             }
 
             @Override
@@ -52,6 +55,8 @@ public class HistogramActivity extends AppCompatActivity {
     @OnClick(R.id.my_view)
     public void onClick() {
         Toast.makeText(this, "hello", Toast.LENGTH_LONG).show();
-        myView.stop();
+//        myView.stop();
+
+        lottery.startAnimation(15);
     }
 }

@@ -4,6 +4,7 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.util.Pair;
@@ -47,7 +48,9 @@ public class MainActivitys extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.webview:
-                startActivity(new Intent(this, WebViewActivity.class));
+                Intent intent = new Intent(this, WebViewActivity.class);
+                intent.putExtra("webview", "hello!");
+                startActivityForResult(intent,1);
                 break;
             case R.id.sensor:
                 startActivity(new Intent(this, SensorManagerActivity.class));
@@ -71,10 +74,16 @@ public class MainActivitys extends AppCompatActivity {
                 setNightMode();
                 break;
         }
-
-
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == 1) {
+            String result = data.getExtras().getString("result");
+            webview.setText(""+result);
+        }
+    }
 
     private void setNightMode() {
         //  获取当前模式

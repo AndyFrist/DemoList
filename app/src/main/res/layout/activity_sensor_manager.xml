@@ -19,9 +19,6 @@
 
         app:textsize2="19dp" />
 
-    <com.example.ex_xuxiaopeng002.myapplication.view.ChartView
-        android:layout_width="300dp"
-        android:layout_height="340dp" />
 
     <RelativeLayout
         android:layout_width="360dp"
@@ -64,7 +61,6 @@
                 android:textColor="@drawable/selector_radio_bg" />
 
             <RadioButton
-
                 android:id="@+id/m_radioButton_back"
                 android:layout_weight="1"
                 android:width="0dp"
@@ -78,4 +74,11 @@
 
         </RadioGroup>
     </RelativeLayout>
+
+    <com.example.ex_xuxiaopeng002.myapplication.view.DashboardView
+        android:id="@+id/dashboard_view_4"
+        android:layout_width="300dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="13dp"
+        android:paddingTop="10dp" />
 </LinearLayout>

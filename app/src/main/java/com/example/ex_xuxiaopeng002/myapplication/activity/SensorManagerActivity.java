@@ -9,14 +9,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.AnticipateOvershootInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.ex_xuxiaopeng002.myapplication.R;
 import com.example.ex_xuxiaopeng002.myapplication.view.ArcProgressView;
+import com.example.ex_xuxiaopeng002.myapplication.view.DashboardView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,6 +31,10 @@ public class SensorManagerActivity extends AppCompatActivity implements SensorEv
     RadioButton mRadioButtonBack;
     @BindView(R.id.m_radiogroup)
     RadioGroup mRadiogroup;
+    @BindView(R.id.dashboard_view_4)
+    DashboardView mDashboardView;
+    private boolean isAnimFinished = true;
+
     private ArcProgressView hello;
     private View view;
     private float size1;
@@ -42,7 +45,7 @@ public class SensorManagerActivity extends AppCompatActivity implements SensorEv
         setContentView(R.layout.activity_sensor_manager);
         ButterKnife.bind(this);
         hello = findViewById(R.id.hello);
-        hello.setValues(100, (float) 55.50, "中心");
+        hello.setValues(100, (float) 95.50, "中心");
 
         view = findViewById(R.id.view);
         size1 = getResources().getDimension(R.dimen.size_01);
@@ -97,7 +100,7 @@ public class SensorManagerActivity extends AppCompatActivity implements SensorEv
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
     }
 
-    @OnClick({R.id.m_radioButton_wk, R.id.m_radioButton, R.id.m_radioButton_back, R.id.m_radiogroup})
+    @OnClick({R.id.m_radioButton_wk, R.id.m_radioButton, R.id.m_radioButton_back, R.id.m_radiogroup, R.id.dashboard_view_4})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.m_radioButton_wk:
@@ -111,10 +114,16 @@ public class SensorManagerActivity extends AppCompatActivity implements SensorEv
                 break;
             case R.id.m_radiogroup:
                 break;
+            case R.id.dashboard_view_4:
+
+                mDashboardView.setVelocity(7000,9);
+
+
+                break;
         }
     }
 
-    private void aa(int size){
+    private void aa(int size) {
         ObjectAnimator animator = ObjectAnimator.ofFloat(view, "translationX", size * size1);//setTranslationY(Float 200)
         animator.setDuration(500);
         animator.setInterpolator(new DecelerateInterpolator());

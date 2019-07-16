@@ -1,5 +1,6 @@
 package com.example.ex_xuxiaopeng002.myapplication.view;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by xuxiaopeng002 on 2019/4/17.
+ * Created by xuxiaopeng002 on 2019/5/20.
  * 图表
  */
 public class ChartView extends View {
@@ -78,7 +79,6 @@ public class ChartView extends View {
         linePaint.setAntiAlias(true);
         chartPaint.setAntiAlias(true);
         tipPaint.setAntiAlias(true);
-        textPaint.setColor(context.getResources().getColor(R.color.colorPrimaryDark));
         linePaint.setColor(context.getResources().getColor(R.color.colorAccent));
         tipPaint.setColor(0xff6d9dff);
 
@@ -113,22 +113,29 @@ public class ChartView extends View {
 
     }
 
+    private float tipLineX;
+
+    private float getTipLineX() {
+        return gridLeft + mGridWidth * clickNum;
+    }
+
+    private void setTipLineX(int clickNum) {
+        tipLineX = gridLeft + mGridWidth * clickNum;
+    }
+
     private void drawTip(Canvas canvas) {
-        tipPaint.setStrokeWidth(2 * size1);
+        tipPaint.setStrokeWidth(1 * size1);
 
 
-        canvas.drawLine(gridLeft + mGridWidth * clickNum, gridTop, gridLeft + mGridWidth * clickNum, mHeight - gridBottom, tipPaint);
+        canvas.drawLine(tipLineX, gridTop, tipLineX, mHeight - gridBottom, tipPaint);
 
-        canvas.drawBitmap(bitmap, gridLeft + mGridWidth * clickNum - size1 * 5, gridTop / 2, tipPaint);
+        canvas.drawBitmap(bitmap, tipLineX - size1 * 5, gridTop / 2, tipPaint);
     }
 
     private void drawChart(Canvas canvas) {
 
-        for (int i = 0; i < 4; i++) {
-            LinearGradient s = new LinearGradient(0, gridTop + (1-valueList.get(i)) * (mHeight - gridTop - gridBottom), 0, mHeight - gridBottom, 0xff87F4FF, 0xff84C3F1, Shader.TileMode.REPEAT);
-            chartPaint.setShader(s);
-
-            canvas.drawRect(gridLeft + mGridWidth * (i + 1) - chartWidth / 2, gridTop + (1-valueList.get(i)) * (mHeight - gridTop - gridBottom) , gridLeft + mGridWidth * (i + 1) + chartWidth / 2, mHeight - gridBottom, chartPaint);
+        for (int i = 0; i < nameList.size(); i++) {
+            canvas.drawRect(gridLeft + mGridWidth * (i + 1) - chartWidth / 2, gridTop + (1 - valueList.get(i) * growth) * (mHeight - gridTop - gridBottom), gridLeft + mGridWidth * (i + 1) + chartWidth / 2, mHeight - gridBottom, chartPaint);
         }
 
 
@@ -188,11 +195,21 @@ public class ChartView extends View {
 
         for (int i = 0; i < rows; i++) {
             //画横线
+            if (i == rows - 1) {
+                linePaint.setStrokeWidth(1);
+            } else {
+                linePaint.setStrokeWidth(1);
+            }
             canvas.drawLine(gridLeft, gridTop + mGridHeight * i, mWidth - gridRight, gridTop + mGridHeight * i, linePaint);
         }
 
         for (int j = 0; j < columns; j++) {
             //画竖线
+            if (j == 0) {
+                linePaint.setStrokeWidth(1);
+            } else {
+                linePaint.setStrokeWidth(1);
+            }
             canvas.drawLine(gridLeft + mGridWidth * j, gridTop, gridLeft + mGridWidth * j, mHeight - gridBottom, linePaint);
         }
     }
@@ -208,7 +225,8 @@ public class ChartView extends View {
 
         LinearGradient s = new LinearGradient(0, 0, 0, mHeight, 0xff87F4FF, 0xff84C3F1, Shader.TileMode.REPEAT);
         chartPaint.setShader(s);
-
+        setTipLineX(clickNum);
+        startAnimter();
     }
 
 
@@ -222,7 +240,9 @@ public class ChartView extends View {
 
                 Log.e("ACTION_DOWN", event.getX() + "=" + event.getRawX());
 
-                int x = (int) event.getX();
+                int x = (int) event.getX() - gridLeft;
+
+                float start = getTipLineX();
 
                 if (x % mGridWidth < mGridWidth / 2) {
                     clickNum = x / mGridWidth;
@@ -234,25 +254,69 @@ public class ChartView extends View {
                     clickNum = 1;
                 }
 
-                if (clickNum >= 4) {
-                    clickNum = 4;
+                if (clickNum >= nameList.size()) {
+                    clickNum = nameList.size();
                 }
-                invalidate();
+
+
+                startAnimter(start, getTipLineX());
                 if (listener != null) {
                     listener.Onclick(clickNum);
                 }
                 break;
+
         }
         return super.onTouchEvent(event);
     }
 
-    interface OnBarClickListener{
+
+    public interface OnBarClickListener {
         void Onclick(int position);
     }
 
     OnBarClickListener listener;
 
-    public void setListener(OnBarClickListener listener) {
+    public void setOnclickListener(OnBarClickListener listener) {
         this.listener = listener;
     }
+
+    public void setClickNum(int clickNum) {
+        this.clickNum = clickNum;
+        setTipLineX(clickNum);
+        invalidate();
+    }
+
+    private void startAnimter(float start, float end) {
+
+        ValueAnimator valueAnimator = ValueAnimator.ofFloat(start, end);
+        valueAnimator.setDuration(1000);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                tipLineX = (float) animation.getAnimatedValue();
+                invalidate();
+            }
+        });
+
+        valueAnimator.start();
+    }
+
+
+    private float growth = 1;
+    private void startAnimter() {
+
+        ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, 1);
+        valueAnimator.setDuration(1000);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                growth = (float) animation.getAnimatedValue();
+                invalidate();
+            }
+        });
+
+        valueAnimator.start();
+    }
+
+
 }
