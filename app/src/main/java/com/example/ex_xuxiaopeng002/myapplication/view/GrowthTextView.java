@@ -7,6 +7,8 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 
+import com.example.ex_xuxiaopeng002.myapplication.R;
+
 /**
  * @Author: ex-xuxiaopeng002
  * @CreateDate: 2019-07-04 11:18
@@ -25,6 +27,7 @@ public class GrowthTextView extends NumberTextView {
 
     public GrowthTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        setBackgroundColor(getContext().getResources().getColor(R.color.color_green));
     }
 
 
@@ -40,10 +43,16 @@ public class GrowthTextView extends NumberTextView {
     }
 
 
-    public void setText(String text) {
-        setText(text);
-    }
+    @Override
+    public void setText(CharSequence text, BufferType type) {
+        super.setText(text, type);
 
+        if (TextUtils.isEmpty(text)) {
+            setBackgroundColor(getContext().getResources().getColor(R.color.color_green));
+        }else{
+            setBackgroundColor(getContext().getResources().getColor(R.color.transparent));
+        }
+    }
 
     public void startAnimter() {
 
@@ -62,7 +71,7 @@ public class GrowthTextView extends NumberTextView {
 
 
             ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, end);
-            valueAnimator.setDuration(1000);
+            valueAnimator.setDuration(10000);
             valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {

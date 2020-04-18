@@ -13,7 +13,9 @@ import android.view.View;
 import com.example.ex_xuxiaopeng002.myapplication.R;
 
 
-
+/**
+ * 文字均匀分布在控件中
+ */
 
 public class AverageTextView extends View {
 

@@ -4,33 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
     tools:context=".activity.AnimatorActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:orientation="vertical">
 
 
-        <ImageView
+        <Button
             android:id="@+id/target"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_margin="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点我飞起"
+            android:layout_margin="10dp"
             android:src="@mipmap/ic_launcher" />
 
 
         <com.example.ex_xuxiaopeng002.myapplication.view.GrowthTextView
             android:id="@+id/text1"
+            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <com.example.ex_xuxiaopeng002.myapplication.view.GrowthTextView
             android:id="@+id/text2"
             android:layout_marginTop="@dimen/sp_14"
+            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -38,7 +39,8 @@
         <com.example.ex_xuxiaopeng002.myapplication.view.ChartView
             android:id="@+id/chartview"
             android:layout_width="300dp"
-            android:layout_height="340dp" />
+            android:layout_gravity="center_horizontal"
+            android:layout_height="140dp" />
 
 
         <com.example.ex_xuxiaopeng002.myapplication.view.AverageTextView
@@ -47,7 +49,7 @@
             android:layout_marginTop="100dp"
             android:background="#ccc"
             android:minWidth="120dp"
-            app:av_text="总是不经意地想起你"
+            app:av_text="是不是均匀分布的文字？"
             app:av_textColor="#f00"
             app:av_textSize="23dp" />
 
@@ -55,21 +57,12 @@
         <com.example.ex_xuxiaopeng002.myapplication.view.AverageTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="20dp"
             android:background="#ccc"
-            app:av_text="就是要测试一下"
+            app:av_text="是均匀分布"
             app:av_textColor="#f00"
             app:av_textSize="23dp" />
 
-        <com.example.ex_xuxiaopeng002.myapplication.view.AverageTextView
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:background="#ccc"
-            android:minWidth="20dp"
-            app:av_text="哈哈哈"
-            app:av_textColor="#f00"
-            app:av_textSize="23dp" />
     </LinearLayout>
 
 
