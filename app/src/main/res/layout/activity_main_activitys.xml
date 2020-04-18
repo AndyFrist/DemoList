@@ -21,6 +21,35 @@
             android:textColor="@color/dayornighttextcolor" />
 
         <Button
+            android:id="@+id/switcher_day_night"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dayornight"
+            android:textColor="@color/dayornighttextcolor" />
+
+        <Button
+            android:id="@+id/reveal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="揭露动画"
+            android:textColor="@color/dayornighttextcolor" />
+
+        <LinearLayout
+            android:id="@+id/para"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#cccccc"
+            android:transitionName="rootviewName">
+
+            <ImageView
+                android:id="@+id/element"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                android:transitionName="transitionName" />
+        </LinearLayout>
+
+        <Button
             android:id="@+id/sensor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,40 +70,12 @@
             android:text="动画"
             android:textColor="@color/dayornighttextcolor" />
 
-        <LinearLayout
-            android:id="@+id/para"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#cccccc"
-            android:transitionName="rootviewName">
-
-            <ImageView
-                android:id="@+id/element"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"
-                android:transitionName="transitionName" />
-        </LinearLayout>
 
         <Button
             android:id="@+id/listviewanimator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="列表侧滑删除"
-            android:textColor="@color/dayornighttextcolor" />
-
-        <Button
-            android:id="@+id/switcher_day_night"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dayornight"
-            android:textColor="@color/dayornighttextcolor" />
-
-        <Button
-            android:id="@+id/reveal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="揭露动画"
             android:textColor="@color/dayornighttextcolor" />
 
 

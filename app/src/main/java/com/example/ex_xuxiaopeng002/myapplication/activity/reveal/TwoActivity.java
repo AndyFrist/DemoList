@@ -10,9 +10,10 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 
 import com.example.ex_xuxiaopeng002.myapplication.R;
+import com.example.ex_xuxiaopeng002.myapplication.activity.BaseActivity;
 import com.example.ex_xuxiaopeng002.myapplication.util.AndroidUtils;
 
-public class TwoActivity extends AppCompatActivity {
+public class TwoActivity extends BaseActivity {
     private View rootTwo;
 
     @Override
