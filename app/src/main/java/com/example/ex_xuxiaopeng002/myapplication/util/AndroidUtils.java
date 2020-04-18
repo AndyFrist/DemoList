@@ -56,6 +56,10 @@ public class AndroidUtils {
         WindowManager mWindowManager = (WindowManager) ctx.getSystemService(Context.WINDOW_SERVICE);
         return mWindowManager.getDefaultDisplay().getWidth();
     }
+    public static int getScreenHeight(Context ctx) {
+        WindowManager mWindowManager = (WindowManager) ctx.getSystemService(Context.WINDOW_SERVICE);
+        return mWindowManager.getDefaultDisplay().getHeight();
+    }
 
 
     /**

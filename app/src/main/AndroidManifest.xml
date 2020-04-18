@@ -4,10 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!--android 9.0上使用前台服务，需要添加权限-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- android 9.0上使用前台服务，需要添加权限 -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-
 
     <application
         android:name=".app.MyApp"
@@ -18,17 +16,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activity.reveal.TwoActivity"
+            android:theme="@style/Transparent"
+            />
+        <activity android:name=".activity.reveal.OneActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            />
         <activity android:name=".activity.MyRecycleViewActivity" />
         <activity
             android:name=".activity.ShareElementActivity"
             android:theme="@style/Transparent" />
-
         <activity android:name=".activity.AnimatorActivity" />
-        <activity
-            android:name=".activity.WebViewActivity"
-
-
-            />
+        <activity android:name=".activity.WebViewActivity" />
         <activity android:name=".activity.SensorManagerActivity" />
         <activity android:name=".activity.HistogramActivity" />
         <activity android:name=".activity.MainActivitys">

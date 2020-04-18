@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.ex_xuxiaopeng002.myapplication.R;
+import com.example.ex_xuxiaopeng002.myapplication.activity.reveal.OneActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,6 +37,9 @@ public class MainActivitys extends AppCompatActivity {
     @BindView(R.id.listviewanimator)
     Button listviewanimator;
 
+    @BindView(R.id.reveal)
+    Button reveal;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +48,7 @@ public class MainActivitys extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.webview, R.id.sensor, R.id.iosvoiceview, R.id.animator, R.id.para, R.id.listviewanimator, R.id.switcher_day_night})
+    @OnClick({R.id.webview, R.id.sensor, R.id.iosvoiceview, R.id.animator, R.id.para, R.id.listviewanimator, R.id.switcher_day_night,R.id.reveal})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.webview:
@@ -72,6 +76,10 @@ public class MainActivitys extends AppCompatActivity {
             case R.id.switcher_day_night:
 
                 setNightMode();
+                break;
+            case R.id.reveal:
+
+                startActivity(new Intent(this, OneActivity.class));
                 break;
         }
     }
