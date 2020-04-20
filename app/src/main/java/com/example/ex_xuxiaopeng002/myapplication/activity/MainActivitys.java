@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.ex_xuxiaopeng002.myapplication.R;
+import com.example.ex_xuxiaopeng002.myapplication.activity.reveal.OneActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,7 +20,7 @@ import butterknife.OnClick;
 
 import static android.support.v7.app.AppCompatDelegate.setDefaultNightMode;
 
-public class MainActivitys extends AppCompatActivity {
+public class MainActivitys extends BaseActivity {
 
     @BindView(R.id.webview)
     Button webview;
@@ -36,6 +37,9 @@ public class MainActivitys extends AppCompatActivity {
     @BindView(R.id.listviewanimator)
     Button listviewanimator;
 
+    @BindView(R.id.reveal)
+    Button reveal;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,22 +48,23 @@ public class MainActivitys extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
+    @OnClick({R.id.webview, R.id.sensor, R.id.iosvoiceview, R.id.animator, R.id.para, R.id.listviewanimator, R.id.switcher_day_night,R.id.reveal})
     @OnClick({R.id.webview, R.id.sensor, R.id.iosvoiceview, R.id.animator, R.id.para, R.id.listviewanimator, R.id.switcher_day_night,R.id.dragRecycleView})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.webview:
                 Intent intent = new Intent(this, WebViewActivity.class);
                 intent.putExtra("webview", "hello!");
-                startActivityForResult(intent,1);
+                startActivityForResult(intent,1,null);
                 break;
             case R.id.sensor:
-                startActivity(new Intent(this, SensorManagerActivity.class));
+                startActivityY(new Intent(this, SensorManagerActivity.class));
                 break;
             case R.id.iosvoiceview:
-                startActivity(new Intent(this, HistogramActivity.class));
+                startActivityX(new Intent(this, HistogramActivity.class));
                 break;
             case R.id.animator:
-                startActivity(new Intent(this, AnimatorActivity.class));
+                startActivityY(new Intent(this, AnimatorActivity.class));
                 break;
             case R.id.para:
                 Pair<View, String> logoPair = Pair.create(element, element.getTransitionName());
@@ -74,6 +79,10 @@ public class MainActivitys extends AppCompatActivity {
                 break;
             case R.id.dragRecycleView:
                 startActivity(new Intent(this, DragRecyclerViewActivity.class));
+                break;
+            case R.id.reveal:
+
+                startActivity(new Intent(this, OneActivity.class));
                 break;
         }
     }

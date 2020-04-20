@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AnticipateOvershootInterpolator;
+import android.view.animation.LinearInterpolator;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,13 +27,13 @@ public class AnimatorActivity extends AppCompatActivity {
     @BindView(R.id.chartview)
     ChartView chartview;
     @BindView(R.id.target)
-    ImageView target;
+    Button target;
     Path path;
 
     @BindView(R.id.text1)
-    TextView text1;
+    GrowthTextView text1;
     @BindView(R.id.text2)
-    TextView text2;
+    GrowthTextView text2;
 
     private ArrayList<String> names = new ArrayList<>();
     private ArrayList<Float> value = new ArrayList<>();
@@ -42,10 +44,10 @@ public class AnimatorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_animator);
         ButterKnife.bind(this);
         path = new Path();
-        path.moveTo(200, 200);
-        path.lineTo(400, 200);
-        path.lineTo(400, 600);
-        path.lineTo(200, 600);
+        path.moveTo(20, 20);
+        path.lineTo(800, 20);
+        path.lineTo(20, 800);
+        path.lineTo(800, 800);
         path.close();
 
 
@@ -67,31 +69,54 @@ public class AnimatorActivity extends AppCompatActivity {
 
         text1.setText(1234 + "");
         text2.setText(12.34 + "%");
+        text1.startAnimter();
+        text2.startAnimter();
 
     }
 
-    @OnClick({R.id.target, R.id.text1, R.id.text2})
+    @OnClick({R.id.target})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.target:
                 ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(target, "translationX", "translationY", path);
                 objectAnimator.setDuration(3000);
-                objectAnimator.setInterpolator(new AnticipateOvershootInterpolator());
+                objectAnimator.setInterpolator(new LinearInterpolator());
+                objectAnimator.setRepeatCount(ObjectAnimator.INFINITE);
+                objectAnimator.setRepeatMode(ObjectAnimator.RESTART);
                 objectAnimator.start();
                 break;
 
-            case R.id.text1:
-                text1.setText(12.34 + "%");
-                break;
-            case R.id.text2:
 
-//                text1.setText(10000 + "", TextView.BufferType.NORMAL);
-                text2.setText(10000.34 + "%", TextView.BufferType.NORMAL);
-
-
-                break;
         }
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.e("生命周期", "onStart");
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e("生命周期", "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e("生命周期", "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e("生命周期", "onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e("生命周期", "onDestroy");
+    }
 }
