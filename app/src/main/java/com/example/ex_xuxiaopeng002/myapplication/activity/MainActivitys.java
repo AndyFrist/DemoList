@@ -44,7 +44,7 @@ public class MainActivitys extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.webview, R.id.sensor, R.id.iosvoiceview, R.id.animator, R.id.para, R.id.listviewanimator, R.id.switcher_day_night})
+    @OnClick({R.id.webview, R.id.sensor, R.id.iosvoiceview, R.id.animator, R.id.para, R.id.listviewanimator, R.id.switcher_day_night,R.id.dragRecycleView})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.webview:
@@ -70,8 +70,10 @@ public class MainActivitys extends AppCompatActivity {
                 startActivity(new Intent(this, MyRecycleViewActivity.class));
                 break;
             case R.id.switcher_day_night:
-
                 setNightMode();
+                break;
+            case R.id.dragRecycleView:
+                startActivity(new Intent(this, DragRecyclerViewActivity.class));
                 break;
         }
     }

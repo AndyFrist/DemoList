@@ -70,6 +70,13 @@
             android:text="@string/dayornight"
             android:textColor="@color/dayornighttextcolor" />
 
+        <Button
+            android:id="@+id/dragRecycleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="可拖拽的recycleview"
+            android:textColor="@color/dayornighttextcolor" />
+
 
     </LinearLayout>
 
