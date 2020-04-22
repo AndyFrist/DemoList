@@ -2,9 +2,12 @@ package com.example.ex_xuxiaopeng002.myapplication.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.ex_xuxiaopeng002.myapplication.R;
+import com.example.ex_xuxiaopeng002.myapplication.util.ActivityManager;
+import com.example.ex_xuxiaopeng002.myapplication.util.StatusBarUtil;
 
 /**
  * Created by xuxiaopeng
@@ -13,13 +16,20 @@ import com.example.ex_xuxiaopeng002.myapplication.R;
  */
 public class BaseActivity extends AppCompatActivity {
 
-
-
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //所有的activity都设置沉浸式的
+        StatusBarUtil.translucentStatusBar(this);
+        //设置字体颜色
+        StatusBarUtil.systemStatusBarTextColor(this, false);
+        ActivityManager.getInstance().add(this);
+    }
 
     @Override
     public void startActivity(Intent intent) {
         super.startActivity(intent);
-        overridePendingTransition(R.anim.activity_y_come, R.anim.slide_no_anim);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_no_anim);
     }
 
     @Override
@@ -51,5 +61,11 @@ public class BaseActivity extends AppCompatActivity {
 
     public void finishWithY() {
         overridePendingTransition(0, R.anim.activity_y_out);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityManager.getInstance().finishActivity(this);
     }
 }

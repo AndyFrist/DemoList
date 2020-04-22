@@ -17,13 +17,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.DragRecyclerViewActivity"></activity>
-        <activity android:name=".activity.reveal.TwoActivity"
-            android:theme="@style/Transparent"
-            />
-        <activity android:name=".activity.reveal.OneActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            />
+        <activity android:name=".activity.TextSwitcherActivity"></activity>
+        <activity android:name=".activity.DragRecyclerViewActivity" />
+        <activity
+            android:name=".activity.reveal.TwoActivity"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".activity.reveal.OneActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".activity.MyRecycleViewActivity" />
         <activity
             android:name=".activity.ShareElementActivity"

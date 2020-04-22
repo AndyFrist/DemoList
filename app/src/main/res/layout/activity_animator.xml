@@ -11,7 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
+        <com.example.ex_xuxiaopeng002.myapplication.view.CommonTitleView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:status_color="@color/color_blue"
+            app:title_color="@color/color_blue"
+            app:back_img="@drawable/ic_back"
+            app:title_content_Text="@string/app_name" />
 
         <Button
             android:id="@+id/target"

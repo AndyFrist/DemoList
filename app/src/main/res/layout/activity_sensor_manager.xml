@@ -4,10 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".activity.SensorManagerActivity">
+
+    <com.example.ex_xuxiaopeng002.myapplication.view.CommonTitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:back_img="@drawable/ic_back"
+        app:status_color="@color/color_blue"
+        app:title_color="@color/color_blue"
+        app:title_content_Text="@string/app_name" />
 
     <com.example.ex_xuxiaopeng002.myapplication.view.ArcProgressView
         android:id="@+id/hello"

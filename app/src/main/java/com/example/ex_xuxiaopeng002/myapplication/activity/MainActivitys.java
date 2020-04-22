@@ -39,6 +39,8 @@ public class MainActivitys extends BaseActivity {
 
     @BindView(R.id.reveal)
     Button reveal;
+ @BindView(R.id.textSwitcher)
+    Button textSwitcher;
 
 
     @Override
@@ -48,7 +50,7 @@ public class MainActivitys extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.webview, R.id.sensor, R.id.iosvoiceview, R.id.animator, R.id.para, R.id.listviewanimator, R.id.switcher_day_night,R.id.reveal,R.id.dragRecycleView})
+    @OnClick({R.id.webview, R.id.sensor, R.id.iosvoiceview, R.id.animator, R.id.para, R.id.listviewanimator, R.id.switcher_day_night,R.id.reveal,R.id.dragRecycleView,R.id.textSwitcher})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.webview:
@@ -80,8 +82,10 @@ public class MainActivitys extends BaseActivity {
                 startActivity(new Intent(this, DragRecyclerViewActivity.class));
                 break;
             case R.id.reveal:
-
                 startActivity(new Intent(this, OneActivity.class));
+                break;
+            case R.id.textSwitcher:
+                startActivity(new Intent(this, TextSwitcherActivity.class));
                 break;
         }
     }

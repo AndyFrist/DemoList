@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class DragRecyclerViewActivity extends AppCompatActivity {
+public class DragRecyclerViewActivity extends BaseActivity {
     private RecyclerView mRecyclerView;
 
     private String[] titles = {"美食", "电影", "酒店住宿", "休闲娱乐", "外卖", "自助餐", "KTV", "机票/火车票", "周边游", "美甲美睫",

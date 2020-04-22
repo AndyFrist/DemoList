@@ -5,94 +5,137 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dayornight"
+    android:orientation="vertical"
     tools:context=".activity.MainActivitys">
 
+    <com.example.ex_xuxiaopeng002.myapplication.view.CommonTitleView
+        android:id="@+id/mainTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:status_color="@color/apptheme"
+        app:title_color="@color/apptheme"
+        app:title_content_Text="@string/app_name" />
+
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/webview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="webview"
-            android:textColor="@color/dayornighttextcolor" />
-
-        <Button
-            android:id="@+id/switcher_day_night"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dayornight"
-            android:textColor="@color/dayornighttextcolor" />
-
-        <Button
-            android:id="@+id/reveal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="揭露动画"
-            android:textColor="@color/dayornighttextcolor" />
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:id="@+id/para"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#cccccc"
-            android:transitionName="rootviewName">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/element"
+            <Button
+                android:id="@+id/webview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"
-                android:transitionName="transitionName" />
+                android:text="webview"
+                android:textColor="@color/dayornighttextcolor" />
+
+            <Button
+                android:id="@+id/switcher_day_night"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dayornight"
+                android:textColor="@color/dayornighttextcolor" />
+
+            <Button
+                android:id="@+id/reveal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="揭露动画"
+                android:textColor="@color/dayornighttextcolor" />
+
+            <LinearLayout
+                android:id="@+id/para"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#cccccc"
+                android:transitionName="rootviewName">
+
+                <ImageView
+                    android:id="@+id/element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher"
+                    android:transitionName="transitionName" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/sensor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="摇一摇"
+                android:textColor="@color/dayornighttextcolor" />
+
+            <Button
+                android:id="@+id/iosvoiceview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ios录音控件"
+                android:textColor="@color/dayornighttextcolor" />
+
+            <Button
+                android:id="@+id/animator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="动画"
+                android:textColor="@color/dayornighttextcolor" />
+
+
+            <Button
+                android:id="@+id/listviewanimator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="列表侧滑删除"
+                android:textColor="@color/dayornighttextcolor" />
+
+            <Button
+                android:id="@+id/dragRecycleView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="可拖拽的recycleview"
+                android:textColor="@color/dayornighttextcolor" />
+  <Button
+                android:id="@+id/textSwitcher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="公告新闻切换"
+                android:textColor="@color/dayornighttextcolor" />
+
+
         </LinearLayout>
 
-        <Button
-            android:id="@+id/sensor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="摇一摇"
-            android:textColor="@color/dayornighttextcolor" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/iosvoiceview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ios录音控件"
-            android:textColor="@color/dayornighttextcolor" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="手势密码" />
 
-        <Button
-            android:id="@+id/animator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="动画"
-            android:textColor="@color/dayornighttextcolor" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="指纹识别" />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="人脸识别" />
 
-        <Button
-            android:id="@+id/listviewanimator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="列表侧滑删除"
-            android:textColor="@color/dayornighttextcolor" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="毛玻璃效果" />
 
-        <Button
-            android:id="@+id/dragRecycleView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="可拖拽的recycleview"
-            android:textColor="@color/dayornighttextcolor" />
+        </LinearLayout>
 
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
 
     </LinearLayout>
 

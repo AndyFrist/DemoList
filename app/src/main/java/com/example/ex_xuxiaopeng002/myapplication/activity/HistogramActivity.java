@@ -14,7 +14,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class HistogramActivity extends AppCompatActivity {
+public class HistogramActivity extends BaseActivity {
 
     @BindView(R.id.my_view)
     HistogramView myView;

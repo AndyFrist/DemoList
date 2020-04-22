@@ -17,7 +17,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MyRecycleViewActivity extends AppCompatActivity implements SlideAdapter.IonSlidingViewClickListener {
+public class MyRecycleViewActivity extends BaseActivity implements SlideAdapter.IonSlidingViewClickListener {
 
     @BindView(R.id.m_recycler_view)
     ReboundRecycleView  listView;

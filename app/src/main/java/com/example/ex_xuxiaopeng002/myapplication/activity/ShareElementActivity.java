@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.example.ex_xuxiaopeng002.myapplication.R;
 import com.example.ex_xuxiaopeng002.myapplication.util.TestManager;
 
-public class ShareElementActivity extends AppCompatActivity {
+public class ShareElementActivity extends BaseActivity {
 
     static  Demo sDemo;
 

@@ -21,7 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SensorManagerActivity extends AppCompatActivity implements SensorEventListener {
+public class SensorManagerActivity extends BaseActivity implements SensorEventListener {
     private static final String TAG = "SensorManagerActivity";
     @BindView(R.id.m_radioButton_wk)
     RadioButton mRadioButtonWk;

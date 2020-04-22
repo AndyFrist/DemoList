@@ -1,11 +1,6 @@
 package com.example.ex_xuxiaopeng002.myapplication.activity;
 
-import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.DownloadListener;
 import android.webkit.WebChromeClient;
@@ -13,13 +8,9 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.example.ex_xuxiaopeng002.myapplication.R;
-import com.example.ex_xuxiaopeng002.myapplication.util.AndroidUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,7 +32,7 @@ public class WebViewActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_webview);
         ButterKnife.bind(this);
 
 //        String webview = getIntent().getExtras().getString("webview");

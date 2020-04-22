@@ -61,6 +61,28 @@ public class AndroidUtils {
         return mWindowManager.getDefaultDisplay().getHeight();
     }
 
+    public static int getStatusBarHeight(Context context) {
+        int statusBarHeight = 0;
+        int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            statusBarHeight = context.getResources().getDimensionPixelSize(resourceId);
+        }
+        return statusBarHeight;
+    }
+    public static int px2dip(Context context, float px) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (px / scale + 0.5f);
+    }
+    /**
+     * dp转px
+     *
+     * @param dpValue dp值
+     * @return px值
+     */
+    public static int dp2px(Context context, final float dpValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
+    }
 
     /**
      * 截取指定view

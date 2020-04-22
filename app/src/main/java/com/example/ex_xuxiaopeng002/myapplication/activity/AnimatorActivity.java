@@ -22,7 +22,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class AnimatorActivity extends AppCompatActivity {
+public class AnimatorActivity extends BaseActivity {
 
     @BindView(R.id.chartview)
     ChartView chartview;
