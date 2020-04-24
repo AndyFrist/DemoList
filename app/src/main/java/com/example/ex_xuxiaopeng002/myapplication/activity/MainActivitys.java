@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.util.Pair;
 import android.view.View;
@@ -39,7 +38,7 @@ public class MainActivitys extends BaseActivity {
 
     @BindView(R.id.reveal)
     Button reveal;
- @BindView(R.id.textSwitcher)
+    @BindView(R.id.textSwitcher)
     Button textSwitcher;
 
 
@@ -50,13 +49,13 @@ public class MainActivitys extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.webview, R.id.sensor, R.id.iosvoiceview, R.id.animator, R.id.para, R.id.listviewanimator, R.id.switcher_day_night,R.id.reveal,R.id.dragRecycleView,R.id.textSwitcher})
+    @OnClick({R.id.webview, R.id.sensor, R.id.iosvoiceview, R.id.animator, R.id.para, R.id.listviewanimator, R.id.switcher_day_night, R.id.reveal, R.id.dragRecycleView, R.id.textSwitcher})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.webview:
                 Intent intent = new Intent(this, WebViewActivity.class);
                 intent.putExtra("webview", "hello!");
-                startActivityForResult(intent,1,null);
+                startActivityForResult(intent, 1, null);
                 break;
             case R.id.sensor:
                 startActivityY(new Intent(this, SensorManagerActivity.class));
@@ -87,6 +86,7 @@ public class MainActivitys extends BaseActivity {
             case R.id.textSwitcher:
                 startActivity(new Intent(this, TextSwitcherActivity.class));
                 break;
+
         }
     }
 
@@ -95,7 +95,7 @@ public class MainActivitys extends BaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == 1) {
             String result = data.getExtras().getString("result");
-            webview.setText(""+result);
+            webview.setText("" + result);
         }
     }
 
@@ -107,6 +107,4 @@ public class MainActivitys extends BaseActivity {
         //  重启Activity
         recreate();
     }
-
-
 }

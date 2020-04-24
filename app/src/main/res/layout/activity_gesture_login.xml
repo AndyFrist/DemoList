@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.login.GestureLoginActivity">
+    <TextView
+        android:id="@+id/m_tv_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center_horizontal"
+        android:text="用户名"
+        android:textAlignment="center"
+        android:textColor="@color/color_blue"
+        android:textSize="15sp" />
+
+
+    <com.example.ex_xuxiaopeng002.myapplication.lock.GestureLockLayout
+        android:id="@+id/lock_pattern"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true" />
+
+
+    <TextView
+        android:id="@+id/tv_other_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:padding="20dp"
+        android:text="其他账号"
+        android:textColor="@color/color333333" />
+</RelativeLayout>

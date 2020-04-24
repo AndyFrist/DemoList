@@ -17,7 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.TextSwitcherActivity"></activity>
+
+        <activity android:name=".activity.MainActivitys"/>
+        <activity android:name=".activity.login.FingerOpenActivity" />
+        <activity android:name=".activity.login.GestureIdentityActivity" />
+        <activity android:name=".activity.login.SetGestureActivity" />
+        <activity android:name=".activity.login.GestureLoginActivity" />
+        <activity android:name=".activity.TextSwitcherActivity" />
         <activity android:name=".activity.DragRecyclerViewActivity" />
         <activity
             android:name=".activity.reveal.TwoActivity"
@@ -33,7 +39,7 @@
         <activity android:name=".activity.WebViewActivity" />
         <activity android:name=".activity.SensorManagerActivity" />
         <activity android:name=".activity.HistogramActivity" />
-        <activity android:name=".activity.MainActivitys">
+        <activity android:name=".activity.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />

@@ -10,9 +10,14 @@ import com.squareup.leakcanary.LeakCanary;
  * @Description: java类作用描述
  */
 public class MyApp extends Application {
+
+    public static Application INSTANCE;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        INSTANCE = (Application) getApplicationContext();
+
         if (LeakCanary.isInAnalyzerProcess(this)) {
             // This process is dedicated to LeakCanary for heap analysis.
             // You should not init your app in this process.
