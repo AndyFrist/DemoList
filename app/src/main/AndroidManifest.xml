@@ -17,8 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".activity.MainActivitys"/>
+        <activity android:name=".activity.StickActivity"></activity>
+        <activity android:name=".activity.MainActivitys" />
         <activity android:name=".activity.login.FingerOpenActivity" />
         <activity android:name=".activity.login.GestureIdentityActivity" />
         <activity android:name=".activity.login.SetGestureActivity" />
