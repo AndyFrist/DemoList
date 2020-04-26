@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".activity.login.FingerOpenActivity">
 
-    <com.example.ex_xuxiaopeng002.myapplication.view.CommonTitleView
+    <com.example.xuxiaopeng002.myapplication.view.CommonTitleView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:back_img="@drawable/ic_back"

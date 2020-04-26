@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activity.login.GestureIdentityActivity">
 
-    <com.example.ex_xuxiaopeng002.myapplication.lock.GestureLockLayout
+    <com.example.xuxiaopeng002.myapplication.lock.GestureLockLayout
         android:id="@+id/lock_pattern"
         android:layout_width="250dp"
         android:layout_height="250dp"

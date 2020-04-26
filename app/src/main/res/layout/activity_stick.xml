@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activity.StickActivity">
 
-    <com.example.ex_xuxiaopeng002.myapplication.view.MyScrollView
+    <com.example.xuxiaopeng002.myapplication.view.MyScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -20,7 +20,7 @@
                 android:id="@+id/tv_content"
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
-                android:background="@color/color333333" />
+                android:background="@color/apptheme" />
 
 
             <android.support.design.widget.TabLayout
@@ -38,10 +38,13 @@
                 android:layout_height="200dp">
                 <LinearLayout
                     android:orientation="horizontal"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/color_red"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:src="@mipmap/ic_category_0"/>
                     <ImageView
                         android:layout_width="200dp"
                         android:layout_height="match_parent"
@@ -54,6 +57,7 @@
                         android:layout_width="200dp"
                         android:layout_height="match_parent"
                         android:src="@mipmap/ic_category_3"/>
+
                 </LinearLayout>
             </HorizontalScrollView>
 
@@ -74,7 +78,7 @@
         </LinearLayout>
 
 
-    </com.example.ex_xuxiaopeng002.myapplication.view.MyScrollView>
+    </com.example.xuxiaopeng002.myapplication.view.MyScrollView>
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabTop"

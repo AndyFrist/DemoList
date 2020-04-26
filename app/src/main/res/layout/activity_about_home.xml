@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/abl_bar"
+        android:layout_width="match_parent"
+        android:layout_height="221dp"
+        android:background="@mipmap/home_banner"
+        app:elevation="0dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+
+            <include
+                layout="@layout/include_home_title_big"
+                android:layout_width="match_parent"
+                android:layout_height="105dp"
+                android:layout_marginTop="115dp"
+                app:layout_collapseMode="none"
+                app:layout_collapseParallaxMultiplier="1" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:paddingTop="15dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin">
+
+                <include
+                    android:id="@+id/include_toolbar_0"
+                    layout="@layout/include_toolbar_0" />
+
+                <include
+                    android:id="@+id/include_toolbar_1"
+                    layout="@layout/include_toolbar_1" />
+
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <com.example.xuxiaopeng002.myapplication.view.NestedScrollViews
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <LinearLayout
+            android:id="@+id/scrollview_ll"
+            android:layout_width="match_parent"
+            android:layout_height="1800dp"
+            android:orientation="vertical"
+            android:paddingBottom="30dp">
+
+            <com.example.xuxiaopeng002.myapplication.view.TimelyPremRecordView
+                android:id="@+id/timelyPremRecordView"
+                android:layout_width="match_parent"
+                android:layout_height="400dp" />
+        </LinearLayout>
+    </com.example.xuxiaopeng002.myapplication.view.NestedScrollViews>
+</android.support.design.widget.CoordinatorLayout>

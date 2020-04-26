@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".activity.MainActivitys">
 
-    <com.example.ex_xuxiaopeng002.myapplication.view.CommonTitleView
+    <com.example.xuxiaopeng002.myapplication.view.CommonTitleView
         android:id="@+id/mainTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,16 +50,17 @@
 
             <LinearLayout
                 android:id="@+id/para"
-                android:layout_width="match_parent"
+                android:layout_width="123dp"
                 android:layout_height="wrap_content"
-                android:background="#cccccc"
+                android:background="#5f00"
+                android:gravity="center"
                 android:transitionName="rootviewName">
 
                 <ImageView
                     android:id="@+id/element"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@mipmap/applogo"
                     android:transitionName="transitionName" />
             </LinearLayout>
 
@@ -120,6 +121,7 @@
                 android:text="吸顶效果" />
 
             <Button
+                android:id="@+id/aboutHome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="首页相关" />
@@ -127,7 +129,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="人脸识别" />
+                android:text="指纹识别" />
 
             <Button
                 android:layout_width="match_parent"

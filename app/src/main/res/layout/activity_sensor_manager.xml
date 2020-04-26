@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".activity.SensorManagerActivity">
 
-    <com.example.ex_xuxiaopeng002.myapplication.view.CommonTitleView
+    <com.example.xuxiaopeng002.myapplication.view.CommonTitleView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:back_img="@drawable/ic_back"
@@ -16,7 +16,7 @@
         app:title_color="@color/color_blue"
         app:title_content_Text="@string/app_name" />
 
-    <com.example.ex_xuxiaopeng002.myapplication.view.ArcProgressView
+    <com.example.xuxiaopeng002.myapplication.view.ArcProgressView
         android:id="@+id/hello"
         android:layout_width="135dp"
         android:layout_height="135dp"
@@ -82,7 +82,7 @@
         </RadioGroup>
     </RelativeLayout>
 
-    <com.example.ex_xuxiaopeng002.myapplication.view.DashboardView
+    <com.example.xuxiaopeng002.myapplication.view.DashboardView
         android:id="@+id/dashboard_view_4"
         android:layout_width="300dp"
         android:layout_height="130dp"

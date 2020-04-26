@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginTop="7.5dp"
+        android:layout_marginRight="@dimen/dp_12"
+        android:layout_marginBottom="7.5dp"
+        android:background="@color/cardview_light_background"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_15">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/timely_premerecord_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dp_15"
+                android:text="实时业绩"
+                android:textColor="@color/color333333"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/area_textview"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_15"
+                android:textSize="12sp"
+                android:textColor="@color/color999"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color999"
+            android:paddingBottom="@dimen/dp_15" />
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/check_selector_today"
+                android:checked="true"
+                android:paddingLeft="5dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="当前保费"
+                android:textColor="@color/color333333"
+                android:textSize="11dp" />
+
+            <CheckBox
+                android:id="@+id/yesterday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="33dp"
+                android:button="@drawable/check_selector_yesterday"
+                android:checked="false"
+                android:paddingLeft="2dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="昨日"
+                android:textColor="@color/color333333"
+                android:textSize="11dp" />
+
+            <CheckBox
+                android:id="@+id/jun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="33dp"
+                android:button="@drawable/check_selector_7dayavg"
+                android:checked="false"
+                android:paddingLeft="5dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="7天平均"
+                android:textColor="@color/color333333"
+                android:textSize="11dp" />
+        </LinearLayout>
+
+
+        <com.example.xuxiaopeng002.myapplication.view.BrokenView
+            android:id="@+id/brokenView"
+            android:layout_width="match_parent"
+            android:layout_height="160dp" />
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

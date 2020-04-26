@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".activity.TextSwitcherActivity">
 
-    <com.example.ex_xuxiaopeng002.myapplication.view.CommonTitleView
+    <com.example.xuxiaopeng002.myapplication.view.CommonTitleView
         android:id="@+id/mainTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
         android:textColor="@android:color/white"
         android:textSize="14sp" />
 
-    <com.example.ex_xuxiaopeng002.myapplication.view.CustomTextSwitcher
+    <com.example.xuxiaopeng002.myapplication.view.CustomTextSwitcher
         android:id="@+id/tvDownUpTextSwitcher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
         android:textColor="@android:color/white"
         android:textSize="14sp" />
 
-    <com.example.ex_xuxiaopeng002.myapplication.view.CustomTextSwitcher
+    <com.example.xuxiaopeng002.myapplication.view.CustomTextSwitcher
         android:id="@+id/tvLeftRightTextSwitcher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

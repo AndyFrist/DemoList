@@ -15,7 +15,7 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp">
 
-        <com.example.ex_xuxiaopeng002.myapplication.lock.GestureLockDisplayView
+        <com.example.xuxiaopeng002.myapplication.lock.GestureLockDisplayView
             android:id="@+id/gesture_display"
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -32,7 +32,7 @@
             android:textColor="@color/color333333"
             android:textSize="@dimen/sp_14" />
 
-        <com.example.ex_xuxiaopeng002.myapplication.lock.GestureLockLayout
+        <com.example.xuxiaopeng002.myapplication.lock.GestureLockLayout
             android:id="@+id/lock_pattern"
             android:layout_width="250dp"
             android:layout_height="250dp" />

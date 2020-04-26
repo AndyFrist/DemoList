@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.ex_xuxiaopeng002.myapplication.view.ReboundScorllView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.xuxiaopeng002.myapplication.view.ReboundScorllView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,45 +11,46 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <com.example.ex_xuxiaopeng002.myapplication.view.CommonTitleView
+
+        <com.example.xuxiaopeng002.myapplication.view.CommonTitleView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:back_img="@drawable/ic_back"
             app:status_color="@color/color_blue"
             app:title_color="@color/color_blue"
-            app:back_img="@drawable/ic_back"
             app:title_content_Text="@string/app_name" />
 
         <Button
             android:id="@+id/target"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="点我飞起"
             android:layout_margin="10dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@mipmap/ic_launcher"
+            android:text="点我飞起" />
 
 
-        <com.example.ex_xuxiaopeng002.myapplication.view.GrowthTextView
+        <com.example.xuxiaopeng002.myapplication.view.GrowthTextView
             android:id="@+id/text1"
-            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
 
-        <com.example.ex_xuxiaopeng002.myapplication.view.GrowthTextView
+        <com.example.xuxiaopeng002.myapplication.view.GrowthTextView
             android:id="@+id/text2"
-            android:layout_marginTop="@dimen/sp_14"
-            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/sp_14" />
 
 
-        <com.example.ex_xuxiaopeng002.myapplication.view.ChartView
+        <com.example.xuxiaopeng002.myapplication.view.ChartView
             android:id="@+id/chartview"
             android:layout_width="300dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_height="140dp" />
+            android:layout_height="140dp"
+            android:layout_gravity="center_horizontal" />
 
 
-        <com.example.ex_xuxiaopeng002.myapplication.view.AverageTextView
+        <com.example.xuxiaopeng002.myapplication.view.AverageTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
@@ -60,7 +61,7 @@
             app:av_textSize="23dp" />
 
 
-        <com.example.ex_xuxiaopeng002.myapplication.view.AverageTextView
+        <com.example.xuxiaopeng002.myapplication.view.AverageTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -69,7 +70,22 @@
             app:av_textColor="#f00"
             app:av_textSize="23dp" />
 
+
+        <com.example.xuxiaopeng002.myapplication.view.AutoSizeTextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:lines="1"
+            android:text="字体大小适应TextView宽度" />
+
+        <com.example.xuxiaopeng002.myapplication.view.AutoSizeTextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:lines="1"
+            android:text="字体大小适应TextView宽度字体大小适应TextView宽度字体大小适应TextView宽度" />
     </LinearLayout>
 
 
-</com.example.ex_xuxiaopeng002.myapplication.view.ReboundScorllView>
+</com.example.xuxiaopeng002.myapplication.view.ReboundScorllView>

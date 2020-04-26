@@ -7,7 +7,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".activity.HistogramActivity">
-    <com.example.ex_xuxiaopeng002.myapplication.view.CommonTitleView
+    <com.example.xuxiaopeng002.myapplication.view.CommonTitleView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:status_color="@color/color_blue"
@@ -24,7 +24,7 @@
         android:max="100" />
 
 
-    <com.example.ex_xuxiaopeng002.myapplication.view.HistogramView
+    <com.example.xuxiaopeng002.myapplication.view.HistogramView
         android:id="@+id/my_view"
         android:layout_width="match_parent"
         android:layout_height="166dp"
@@ -33,7 +33,7 @@
         android:layerType="software" />
 
 
-    <com.example.ex_xuxiaopeng002.myapplication.view.LotteryView
+    <com.example.xuxiaopeng002.myapplication.view.LotteryView
         android:id="@+id/lottery"
         android:layout_width="266dp"
         android:layout_height="266dp"

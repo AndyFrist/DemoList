@@ -21,4 +21,6 @@
     <color name="color_light">#ECEFF1</color>
     <color name="colorffffff">#ffffff</color>
     <color name="color333333">#333333</color>
+    <color name="color666">#666666</color>
+    <color name="color999">#999999</color>
 </resources>
