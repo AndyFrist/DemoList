@@ -8,14 +8,21 @@
     tools:context=".activity.login.FingerOpenActivity">
 
     <com.example.xuxiaopeng002.myapplication.view.CommonTitleView
+        app:title_content_Text="开启指纹识别"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/fingerSkipTV"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:back_img="@drawable/ic_back"
-        app:title_content_Text="指纹识别" />
+        android:layout_gravity="end"
+        android:padding="15dp"
+        android:text="跳过"
+        android:textColor="@color/color_red" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="400dp">
 
         <ImageView
             android:id="@+id/mIv"
@@ -35,5 +42,13 @@
             android:padding="16dp"
             android:text="点击验证" />
     </RelativeLayout>
+
+
+    <CheckBox
+        android:id="@+id/fingerRemindCk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="不再提示" />
+
 
 </LinearLayout>

@@ -127,9 +127,10 @@
                 android:text="首页相关" />
 
             <Button
+                android:id="@+id/safeCenter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="指纹识别" />
+                android:text="安全中心" />
 
             <Button
                 android:layout_width="match_parent"

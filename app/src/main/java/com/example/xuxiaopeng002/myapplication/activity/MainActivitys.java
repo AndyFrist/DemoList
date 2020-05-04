@@ -49,7 +49,7 @@ public class MainActivitys extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.webview, R.id.sensor, R.id.iosvoiceview, R.id.animator, R.id.para, R.id.listviewanimator, R.id.switcher_day_night, R.id.reveal, R.id.dragRecycleView, R.id.textSwitcher,R.id.stick,R.id.aboutHome})
+    @OnClick({R.id.webview, R.id.sensor, R.id.iosvoiceview, R.id.animator, R.id.para, R.id.listviewanimator, R.id.switcher_day_night, R.id.reveal, R.id.dragRecycleView, R.id.textSwitcher,R.id.stick,R.id.aboutHome,R.id.safeCenter})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.webview:
@@ -91,6 +91,11 @@ public class MainActivitys extends BaseActivity {
                 break;
             case R.id.stick:
                 startActivity(new Intent(this, StickActivity.class));
+                break;
+            case R.id.safeCenter:
+                startActivity(new Intent(this, SafeCenterActivity.class));
+                break;
+            default:
                 break;
 
         }

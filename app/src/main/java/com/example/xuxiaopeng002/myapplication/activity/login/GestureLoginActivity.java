@@ -3,18 +3,26 @@ package com.example.xuxiaopeng002.myapplication.activity.login;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ex_xuxiaopeng002.myapplication.R;
 import com.example.xuxiaopeng002.myapplication.activity.BaseActivity;
 import com.example.xuxiaopeng002.myapplication.activity.MainActivitys;
 import com.example.xuxiaopeng002.myapplication.lock.GestureLockLayout;
 import com.example.xuxiaopeng002.myapplication.lock.JDLockView;
+import com.example.xuxiaopeng002.myapplication.util.ConstantsKey;
 import com.example.xuxiaopeng002.myapplication.util.SpUtil;
+import com.example.xuxiaopeng002.myapplication.util.ToastUtils;
+import com.example.xuxiaopeng002.myapplication.util.finger.AonFingerChangeCallback;
+import com.example.xuxiaopeng002.myapplication.util.finger.FingerManager;
+import com.example.xuxiaopeng002.myapplication.util.finger.SharePreferenceUtil;
+import com.example.xuxiaopeng002.myapplication.util.finger.SimpleFingerCheckCallback;
 
 public class GestureLoginActivity extends BaseActivity implements View.OnClickListener {
     GestureLockLayout mLockLayout;
@@ -89,6 +97,11 @@ public class GestureLoginActivity extends BaseActivity implements View.OnClickLi
                 }
             }
         });
+
+        boolean  finger = (boolean) SpUtil.mCommonSp().get(ConstantsKey.finger_open,false);
+        if (finger){
+            initFinger();
+        }
     }
 
     private void goMain() {
@@ -113,6 +126,59 @@ public class GestureLoginActivity extends BaseActivity implements View.OnClickLi
                 startActivity(new Intent(this,SetGestureActivity.class));
                 finish();
                 break;
+            default:
+                break;
         }
+    }
+
+    private void initFinger(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            switch (FingerManager.checkSupport(GestureLoginActivity.this)) {
+                case DEVICE_UNSUPPORTED:
+                    ToastUtils.show("您的设备不支持指纹");
+                    break;
+                case SUPPORT_WITHOUT_DATA:
+                    ToastUtils.show("请在系统录入指纹后再验证");
+                    break;
+                case SUPPORT:
+                    FingerManager.build().setApplication(getApplication())
+                            .setTitle("指纹验证")
+                            .setDes("请按下指纹")
+                            .setNegativeText("取消")
+                            .setFingerCheckCallback(new SimpleFingerCheckCallback() {
+                                @Override
+                                public void onSucceed() {
+                                    ToastUtils.show("验证成功");
+                                    goMain();
+                                }
+
+                                @Override
+                                public void onError(String error) {
+                                    ToastUtils.show("验证失败");
+                                }
+
+                                @Override
+                                public void onCancel() {
+                                    ToastUtils.show("您取消了识别");
+                                }
+                            })
+                            .setFingerChangeCallback(new AonFingerChangeCallback() {
+                                @Override
+                                protected void onFingerDataChange() {
+                                    ToastUtils.show("指纹数据发生了变化");
+
+                                    FingerManager.updateFingerData(GestureLoginActivity.this);
+                                    SharePreferenceUtil.saveData(GestureLoginActivity.this, SharePreferenceUtil.KEY_IS_FINGER_CHANGE, "");
+                                }
+                            })
+                            .create()
+                            .startListener(GestureLoginActivity.this);
+
+                    break;
+                default:
+                    break;
+            }
+        }
+
     }
 }
