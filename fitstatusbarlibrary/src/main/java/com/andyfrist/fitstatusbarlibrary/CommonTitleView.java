@@ -1,4 +1,4 @@
-package com.example.xuxiaopeng002.myapplication.view;
+package com.andyfrist.fitstatusbarlibrary;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,9 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.ex_xuxiaopeng002.myapplication.R;
-import com.example.xuxiaopeng002.myapplication.util.ActivityManager;
-import com.example.xuxiaopeng002.myapplication.util.AndroidUtils;
 
 
 /**
@@ -57,7 +54,7 @@ public class CommonTitleView extends LinearLayout {
     private float backSize, contentSize, rightSize;
     private int backImgId, rightImgId;
 
-    private void init(Context context, @Nullable AttributeSet attrs) {
+    private void init(final Context context, @Nullable AttributeSet attrs) {
         this.context = context;
         View view = LayoutInflater.from(context).inflate(R.layout.common_titleview_layout, this, true);
         titleStatus = findViewById(R.id.titleStatus);
@@ -70,7 +67,7 @@ public class CommonTitleView extends LinearLayout {
         titleRightIv = findViewById(R.id.titleRightIv);
         titleRightTv = findViewById(R.id.titleRightTv);
 
-        int top = AndroidUtils.getStatusBarHeight(context);
+        int top = StatusBarUtil.getStatusBarHeight(context);
         LayoutParams layoutParams = (LayoutParams) titleStatus.getLayoutParams();
         layoutParams.height = top;
         titleStatus.setLayoutParams(layoutParams);
@@ -88,9 +85,9 @@ public class CommonTitleView extends LinearLayout {
         contentText = array.getString(R.styleable.CommonTitleView_title_content_Text);
         rightText = array.getString(R.styleable.CommonTitleView_right_Text);
 
-        backSize = array.getDimension(R.styleable.CommonTitleView_back_size, AndroidUtils.dp2px(context, 14));
-        contentSize = array.getDimension(R.styleable.CommonTitleView_title_content_size, AndroidUtils.dp2px(context, 17));
-        rightSize = array.getDimension(R.styleable.CommonTitleView_right_size, AndroidUtils.dp2px(context, 14));
+        backSize = array.getDimension(R.styleable.CommonTitleView_back_size, StatusBarUtil.dp2px(context, 14));
+        contentSize = array.getDimension(R.styleable.CommonTitleView_title_content_size, StatusBarUtil.dp2px(context, 17));
+        rightSize = array.getDimension(R.styleable.CommonTitleView_right_size, StatusBarUtil.dp2px(context, 14));
 
         backImgId = array.getResourceId(R.styleable.CommonTitleView_back_img, -1);
         rightImgId = array.getResourceId(R.styleable.CommonTitleView_right_img, -1);
@@ -120,8 +117,10 @@ public class CommonTitleView extends LinearLayout {
         titleBackIv.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Activity activity = ActivityManager.getInstance().currentActivity();
-                activity.finish();
+                if (context instanceof Activity) {
+                    Activity activity = (Activity) context;
+                    activity.finish();
+                }
             }
         });
     }

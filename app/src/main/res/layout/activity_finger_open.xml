@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".activity.login.FingerOpenActivity">
 
-    <com.example.xuxiaopeng002.myapplication.view.CommonTitleView
+    <com.andyfrist.fitstatusbarlibrary.CommonTitleView
         app:title_content_Text="开启指纹识别"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

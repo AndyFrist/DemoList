@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.example.xuxiaopeng002.myapplication.view.CommonTitleView
+        <com.andyfrist.fitstatusbarlibrary.CommonTitleView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:back_img="@drawable/ic_back"
