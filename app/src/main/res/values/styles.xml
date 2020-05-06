@@ -11,8 +11,6 @@
     </style>
 
     <style name="StarActivity" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowBackground">@color/apptheme</item>  //闪屏页图片
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">false</item><!--显示虚拟按键，并腾出空间-->
+        <item name="android:windowBackground">@drawable/main_bitmap_splash_bg</item> //闪屏页图片
     </style>
 </resources>

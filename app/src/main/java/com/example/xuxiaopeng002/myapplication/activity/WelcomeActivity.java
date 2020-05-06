@@ -1,8 +1,8 @@
 package com.example.xuxiaopeng002.myapplication.activity;
 
 import android.content.Intent;
-import android.os.Handler;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 
 import com.example.ex_xuxiaopeng002.myapplication.R;
@@ -27,6 +27,6 @@ public class WelcomeActivity extends BaseActivity {
                 }
                 finish();
             }
-        }, 1000);
+        }, 3000);
     }
 }
