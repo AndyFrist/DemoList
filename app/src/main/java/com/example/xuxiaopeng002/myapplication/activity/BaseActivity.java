@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.andyfrist.fitstatusbarlibrary.StatusBarUtil;
 import com.example.ex_xuxiaopeng002.myapplication.R;
 import com.example.xuxiaopeng002.myapplication.util.ActivityManager;
-import com.example.xuxiaopeng002.myapplication.util.StatusBarUtil;
 
 /**
  * Created by xuxiaopeng

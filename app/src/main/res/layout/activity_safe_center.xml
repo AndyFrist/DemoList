@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.xuxiaopeng002.myapplication.activity.SafeCenterActivity">
+
+    <com.andyfrist.fitstatusbarlibrary.CommonTitleView
+        android:id="@+id/mainTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:status_color="@color/apptheme"
+        app:title_color="@color/apptheme"
+        app:title_content_Text="安全中心" />
+
+    <CheckBox
+        android:id="@+id/fingerLoginCk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="指纹登录" />
+
+
+    <CheckBox
+        android:id="@+id/gestureLoginCk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="手势登录" />
+
+</LinearLayout>

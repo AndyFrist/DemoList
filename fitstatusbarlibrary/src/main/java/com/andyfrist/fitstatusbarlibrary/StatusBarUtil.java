@@ -1,4 +1,4 @@
-package com.example.xuxiaopeng002.myapplication.util;
+package com.andyfrist.fitstatusbarlibrary;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -11,13 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.LinearLayout;
 
-import com.example.ex_xuxiaopeng002.myapplication.R;
 
 
 /**
- * Created by ex-luolong003 on 2018/4/13.
+ * @Date: 2020-04-15
+ * @author: ex-xuxiaopeng002
+ * @Description: 状态栏设置沉浸式相关的工具
  */
 
 public class StatusBarUtil {
@@ -95,42 +95,42 @@ public class StatusBarUtil {
     }
 
 
-    /**
-     * 添加半透明矩形条
-     *
-     * @param activity       需要设置的 activity
-     * @param statusBarAlpha 透明值
-     */
-    private static void addTranslucentView(Activity activity, @IntRange(from = 0, to = 255) int statusBarAlpha) {
-        ViewGroup contentView = (ViewGroup) activity.findViewById(android.R.id.content);
-        View fakeTranslucentView = contentView.findViewById(FAKE_TRANSLUCENT_VIEW_ID);
-        if (fakeTranslucentView != null) {
-            if (fakeTranslucentView.getVisibility() == View.GONE) {
-                fakeTranslucentView.setVisibility(View.VISIBLE);
-            }
-            fakeTranslucentView.setBackgroundColor(Color.argb(statusBarAlpha, 0, 0, 0));
-        } else {
-            contentView.addView(createTranslucentStatusBarView(activity, statusBarAlpha));
-        }
-    }
+//    /**
+//     * 添加半透明矩形条
+//     *
+//     * @param activity       需要设置的 activity
+//     * @param statusBarAlpha 透明值
+//     */
+//    private static void addTranslucentView(Activity activity, @IntRange(from = 0, to = 255) int statusBarAlpha) {
+//        ViewGroup contentView = (ViewGroup) activity.findViewById(android.R.id.content);
+//        View fakeTranslucentView = contentView.findViewById(FAKE_TRANSLUCENT_VIEW_ID);
+//        if (fakeTranslucentView != null) {
+//            if (fakeTranslucentView.getVisibility() == View.GONE) {
+//                fakeTranslucentView.setVisibility(View.VISIBLE);
+//            }
+//            fakeTranslucentView.setBackgroundColor(Color.argb(statusBarAlpha, 0, 0, 0));
+//        } else {
+//            contentView.addView(createTranslucentStatusBarView(activity, statusBarAlpha));
+//        }
+//    }
 
-
-    /**
-     * 创建半透明矩形 View
-     *
-     * @param alpha 透明值
-     * @return 半透明 View
-     */
-    private static View createTranslucentStatusBarView(Activity activity, int alpha) {
-        // 绘制一个和状态栏一样高的矩形
-        View statusBarView = new View(activity);
-        LinearLayout.LayoutParams params =
-                new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, getStatusBarHeight(activity));
-        statusBarView.setLayoutParams(params);
-        statusBarView.setBackgroundColor(Color.argb(alpha, 0, 0, 0));
-        statusBarView.setId(FAKE_TRANSLUCENT_VIEW_ID);
-        return statusBarView;
-    }
+//
+//    /**
+//     * 创建半透明矩形 View
+//     *
+//     * @param alpha 透明值
+//     * @return 半透明 View
+//     */
+//    private static View createTranslucentStatusBarView(Activity activity, int alpha) {
+//        // 绘制一个和状态栏一样高的矩形
+//        View statusBarView = new View(activity);
+//        LinearLayout.LayoutParams params =
+//                new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, getStatusBarHeight(activity));
+//        statusBarView.setLayoutParams(params);
+//        statusBarView.setBackgroundColor(Color.argb(alpha, 0, 0, 0));
+//        statusBarView.setId(FAKE_TRANSLUCENT_VIEW_ID);
+//        return statusBarView;
+//    }
 
 
     /**
@@ -175,6 +175,17 @@ public class StatusBarUtil {
             ViewGroup rootView = (ViewGroup) ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
             rootView.setPadding(0, 0, 0, 0);
         }
+    }
+
+    /**
+     * dp转px
+     *
+     * @param dpValue dp值
+     * @return px值
+     */
+    public static int dp2px(Context context, final float dpValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
     }
 
 }

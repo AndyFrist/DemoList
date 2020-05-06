@@ -7,7 +7,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".activity.HistogramActivity">
-    <com.example.xuxiaopeng002.myapplication.view.CommonTitleView
+    <com.andyfrist.fitstatusbarlibrary.CommonTitleView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:status_color="@color/color_blue"

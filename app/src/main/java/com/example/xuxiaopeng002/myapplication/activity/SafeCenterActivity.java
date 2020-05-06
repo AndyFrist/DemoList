@@ -1,16 +1,14 @@
-package com.example.xuxiaopeng002.myapplication.activity.login;
+package com.example.xuxiaopeng002.myapplication.activity;
 
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
+import android.text.TextUtils;
 import android.widget.CheckBox;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.CompoundButton;
 
 import com.example.ex_xuxiaopeng002.myapplication.R;
-import com.example.xuxiaopeng002.myapplication.activity.BaseActivity;
-import com.example.xuxiaopeng002.myapplication.activity.MainActivitys;
+import com.example.xuxiaopeng002.myapplication.activity.login.SetGestureActivity;
 import com.example.xuxiaopeng002.myapplication.util.ConstantsKey;
 import com.example.xuxiaopeng002.myapplication.util.SpUtil;
 import com.example.xuxiaopeng002.myapplication.util.ToastUtils;
@@ -19,28 +17,56 @@ import com.example.xuxiaopeng002.myapplication.util.finger.FingerManager;
 import com.example.xuxiaopeng002.myapplication.util.finger.SharePreferenceUtil;
 import com.example.xuxiaopeng002.myapplication.util.finger.SimpleFingerCheckCallback;
 
-public class FingerOpenActivity extends BaseActivity implements View.OnClickListener {
+public class SafeCenterActivity extends BaseActivity {
 
-    private TextView fingerSkipTV;
-    private ImageView mIv;
-    private CheckBox fingerRemindCk;
-
+    private CheckBox fingerLoginCk;
+    private CheckBox gestureLoginCk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_finger_open);
-        fingerSkipTV = findViewById(R.id.fingerSkipTV);
-        mIv = findViewById(R.id.mIv);
-        fingerRemindCk = findViewById(R.id.fingerRemindCk);
-        mIv.setOnClickListener(this);
-        fingerSkipTV.setOnClickListener(this);
+        setContentView(R.layout.activity_safe_center);
+        fingerLoginCk = findViewById(R.id.fingerLoginCk);
+        gestureLoginCk = findViewById(R.id.gestureLoginCk);
+        String  Gesture = (String) SpUtil.mCommonSp().get("Gesture","");
+        if (TextUtils.isEmpty(Gesture)){
+            gestureLoginCk.setChecked(false);
+        }else {
+            gestureLoginCk.setChecked(true);
+        }
+        gestureLoginCk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    startActivity(new Intent(SafeCenterActivity.this, SetGestureActivity.class));
+                }else{
+                    SpUtil.mCommonSp().put("Gesture","");
+                }
+            }
+        });
 
+        boolean  finger = (boolean) SpUtil.mCommonSp().get(ConstantsKey.finger_open,false);
+        if (finger){
+            fingerLoginCk.setChecked(true);
+        }else {
+            fingerLoginCk.setChecked(false);
+        }
+
+        fingerLoginCk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    initFinger();
+                }else{
+                    SpUtil.mCommonSp().put(ConstantsKey.finger_open,false);
+                }
+            }
+        });
     }
 
     private void initFinger(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            switch (FingerManager.checkSupport(FingerOpenActivity.this)) {
+            switch (FingerManager.checkSupport(SafeCenterActivity.this)) {
                 case DEVICE_UNSUPPORTED:
                     ToastUtils.show("您的设备不支持指纹");
                     break;
@@ -57,7 +83,6 @@ public class FingerOpenActivity extends BaseActivity implements View.OnClickList
                                 public void onSucceed() {
                                     ToastUtils.show("验证成功");
                                     SpUtil.mCommonSp().put(ConstantsKey.finger_open,true);
-                                    goMain();
                                 }
 
                                 @Override
@@ -75,12 +100,12 @@ public class FingerOpenActivity extends BaseActivity implements View.OnClickList
                                 protected void onFingerDataChange() {
                                     ToastUtils.show("指纹数据发生了变化");
 
-                                    FingerManager.updateFingerData(FingerOpenActivity.this);
-                                    SharePreferenceUtil.saveData(FingerOpenActivity.this, SharePreferenceUtil.KEY_IS_FINGER_CHANGE, "");
+                                    FingerManager.updateFingerData(SafeCenterActivity.this);
+                                    SharePreferenceUtil.saveData(SafeCenterActivity.this, SharePreferenceUtil.KEY_IS_FINGER_CHANGE, "");
                                 }
                             })
                             .create()
-                            .startListener(FingerOpenActivity.this);
+                            .startListener(SafeCenterActivity.this);
 
                     break;
                 default:
@@ -88,26 +113,5 @@ public class FingerOpenActivity extends BaseActivity implements View.OnClickList
             }
         }
 
-    }
-    private void goMain() {
-        startActivity(new Intent(this, MainActivitys.class));
-        finish();
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.fingerSkipTV:
-                if (fingerRemindCk.isChecked()) {
-                    SpUtil.mCommonSp().put(ConstantsKey.finger_remind_never,true);
-                }
-                startActivity(new Intent(this,SetGestureActivity.class));
-                break;
-            case R.id.mIv:
-                initFinger();
-                break;
-            default:
-                break;
-        }
     }
 }

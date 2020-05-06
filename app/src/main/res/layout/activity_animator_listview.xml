@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".activity.MyRecycleViewActivity">
-    <com.example.xuxiaopeng002.myapplication.view.CommonTitleView
+    <com.andyfrist.fitstatusbarlibrary.CommonTitleView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:status_color="@color/color_blue"

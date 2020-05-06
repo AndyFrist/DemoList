@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".activity.MainActivitys">
 
-    <com.example.xuxiaopeng002.myapplication.view.CommonTitleView
+    <com.andyfrist.fitstatusbarlibrary.CommonTitleView
         android:id="@+id/mainTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -127,14 +127,15 @@
                 android:text="首页相关" />
 
             <Button
+                android:id="@+id/safeCenter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="指纹识别" />
+                android:text="安全中心" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="毛玻璃效果" />
+                android:text="翻牌效果" />
 
         </LinearLayout>
 

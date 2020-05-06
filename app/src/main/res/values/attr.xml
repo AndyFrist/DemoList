@@ -35,34 +35,4 @@
 
 
 
-    <!-- 通用标题属性 -->
-    <declare-styleable name="CommonTitleView">
-
-        <!--刘海颜色-->
-        <attr name="status_color" format="color" />
-        <!--title颜色-->
-        <attr name="title_color" format="color" />
-        <!--返回按钮图片-->
-        <attr name="back_img" format="reference" />
-
-        <!--返回文字相关-->
-        <attr name="back_Text" format="string" />
-        <attr name="back_color" format="color" />
-        <attr name="back_size" format="dimension" />
-
-        <!--title标题文字相关-->
-        <attr name="title_content_Text" format="string" />
-        <attr name="title_content_color" format="color" />
-        <attr name="title_content_size" format="dimension" />
-
-        <!--右边文字相关-->
-        <attr name="right_Text" format="string" />
-        <attr name="right_color" format="color" />
-        <attr name="right_size" format="dimension" />
-
-        <!--右边图片-->
-        <attr name="right_img" format="reference" />
-
-    </declare-styleable>
-
 </resources>
