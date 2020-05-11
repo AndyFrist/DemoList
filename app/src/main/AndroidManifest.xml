@@ -20,12 +20,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name="com.example.xuxiaopeng002.myapplication.activity.AboutHomeActivity"/>
-        <activity android:name="com.example.xuxiaopeng002.myapplication.activity.SafeCenterActivity"></activity>
-        <activity android:name="com.example.xuxiaopeng002.myapplication.activity.AboutHomeActivity" />
+        <activity android:name="com.example.xuxiaopeng002.myapplication.activity.SafeCenterActivity"/>
         <activity android:name="com.example.xuxiaopeng002.myapplication.activity.MainActivitys" />
         <activity android:name="com.example.xuxiaopeng002.myapplication.activity.StickActivity"/>
-        <activity android:name="com.example.xuxiaopeng002.myapplication.activity.StickActivity" />
-        <activity android:name="com.example.xuxiaopeng002.myapplication.activity.MainActivitys" />
         <activity android:name="com.example.xuxiaopeng002.myapplication.activity.login.FingerOpenActivity" />
         <activity android:name="com.example.xuxiaopeng002.myapplication.activity.login.GestureIdentityActivity" />
         <activity android:name="com.example.xuxiaopeng002.myapplication.activity.login.SetGestureActivity" />

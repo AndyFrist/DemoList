@@ -16,11 +16,13 @@ import com.example.xuxiaopeng002.myapplication.util.finger.AonFingerChangeCallba
 import com.example.xuxiaopeng002.myapplication.util.finger.FingerManager;
 import com.example.xuxiaopeng002.myapplication.util.finger.SharePreferenceUtil;
 import com.example.xuxiaopeng002.myapplication.util.finger.SimpleFingerCheckCallback;
+import com.example.xuxiaopeng002.myapplication.view.iosuiswitch.IosSwitch;
 
 public class SafeCenterActivity extends BaseActivity {
 
     private CheckBox fingerLoginCk;
     private CheckBox gestureLoginCk;
+    private IosSwitch iosSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,13 @@ public class SafeCenterActivity extends BaseActivity {
         setContentView(R.layout.activity_safe_center);
         fingerLoginCk = findViewById(R.id.fingerLoginCk);
         gestureLoginCk = findViewById(R.id.gestureLoginCk);
+        iosSwitch = findViewById(R.id.iosSwitch);
+        iosSwitch.setOnToggleListener(new IosSwitch.OnToggleListener() {
+            @Override
+            public void onSwitchChangeListener(boolean switchState) {
+                ToastUtils.show(switchState ? "开" :"关");
+            }
+        });
         String  Gesture = (String) SpUtil.mCommonSp().get("Gesture","");
         if (TextUtils.isEmpty(Gesture)){
             gestureLoginCk.setChecked(false);

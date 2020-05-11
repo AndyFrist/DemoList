@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingStart="@dimen/dp_15"
     tools:context="com.example.xuxiaopeng002.myapplication.activity.SafeCenterActivity">
 
     <com.andyfrist.fitstatusbarlibrary.CommonTitleView
@@ -29,5 +30,10 @@
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:text="手势登录" />
+
+    <com.example.xuxiaopeng002.myapplication.view.iosuiswitch.IosSwitch
+        android:id="@+id/iosSwitch"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
 
 </LinearLayout>
