@@ -45,6 +45,8 @@ public class MainActivitys extends BaseActivity {
     Button reveal;
     @BindView(R.id.textSwitcher)
     Button textSwitcher;
+    @BindView(R.id.album)
+    Button album;
 
 
     @Override
@@ -54,7 +56,8 @@ public class MainActivitys extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.webview, R.id.sensor, R.id.iosvoiceview, R.id.animator, R.id.para, R.id.listviewanimator, R.id.switcher_day_night, R.id.reveal, R.id.dragRecycleView, R.id.textSwitcher,R.id.stick,R.id.aboutHome,R.id.safeCenter})
+    @OnClick({R.id.webview, R.id.sensor, R.id.iosvoiceview, R.id.animator, R.id.para, R.id.listviewanimator, R.id.switcher_day_night, R.id.reveal, R.id.dragRecycleView,
+            R.id.textSwitcher,R.id.stick,R.id.aboutHome,R.id.safeCenter,R.id.album})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.webview:
@@ -100,6 +103,8 @@ public class MainActivitys extends BaseActivity {
             case R.id.safeCenter:
                 startActivity(new Intent(this, SafeCenterActivity.class));
                 break;
+            case R.id.album:
+                startActivity(new Intent(this, AlbumActivity.class));
             default:
                 break;
 

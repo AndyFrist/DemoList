@@ -23,4 +23,6 @@
     <color name="color333333">#333333</color>
     <color name="color666">#666666</color>
     <color name="color999">#999999</color>
+    <color name="colorTransparent_15">#80000000</color>
+    <color name="coloreeeeee">#eeeeee</color>
 </resources>

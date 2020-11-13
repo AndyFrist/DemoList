@@ -133,9 +133,10 @@
                 android:text="安全中心" />
 
             <Button
+                android:id="@+id/album"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="翻牌效果" />
+                android:text="我的相册" />
 
         </LinearLayout>
 

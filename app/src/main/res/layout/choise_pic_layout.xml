@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/colorTransparent_15"
+
+    >
+
+    <!--<include layout="@layout/m_view_empty" />-->
+<LinearLayout
+    android:id="@+id/layout_0"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical"
+   android:background="@color/coloreeeeee">
+    <TextView
+        android:id="@+id/m_tv_take_photo"
+        android:text="拍照"
+        style="@style/style_pic_text_item" />
+    <TextView
+        android:id="@+id/m_tv_choose_local"
+        android:text="从相册选择"
+        style="@style/style_pic_text_item" />
+    <TextView
+        android:id="@+id/m_tv_cancel"
+        android:layout_marginTop="@dimen/dp_12"
+        android:text="取消"
+        style="@style/style_pic_text_item" />
+</LinearLayout>
+
+</RelativeLayout>

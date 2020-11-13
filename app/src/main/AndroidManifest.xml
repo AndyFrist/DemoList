@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- android 9.0上使用前台服务，需要添加权限 -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
 
@@ -19,10 +20,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.example.xuxiaopeng002.myapplication.activity.AboutHomeActivity"/>
-        <activity android:name="com.example.xuxiaopeng002.myapplication.activity.SafeCenterActivity"/>
+        <activity android:name="com.example.xuxiaopeng002.myapplication.activity.AlbumActivity" />
+        <activity android:name="com.example.xuxiaopeng002.myapplication.activity.AboutHomeActivity" />
+        <activity android:name="com.example.xuxiaopeng002.myapplication.activity.SafeCenterActivity" />
         <activity android:name="com.example.xuxiaopeng002.myapplication.activity.MainActivitys" />
-        <activity android:name="com.example.xuxiaopeng002.myapplication.activity.StickActivity"/>
+        <activity android:name="com.example.xuxiaopeng002.myapplication.activity.StickActivity" />
         <activity android:name="com.example.xuxiaopeng002.myapplication.activity.login.FingerOpenActivity" />
         <activity android:name="com.example.xuxiaopeng002.myapplication.activity.login.GestureIdentityActivity" />
         <activity android:name="com.example.xuxiaopeng002.myapplication.activity.login.SetGestureActivity" />
@@ -43,7 +45,8 @@
         <activity android:name="com.example.xuxiaopeng002.myapplication.activity.WebViewActivity" />
         <activity android:name="com.example.xuxiaopeng002.myapplication.activity.SensorManagerActivity" />
         <activity android:name="com.example.xuxiaopeng002.myapplication.activity.HistogramActivity" />
-        <activity android:name="com.example.xuxiaopeng002.myapplication.activity.WelcomeActivity"
+        <activity
+            android:name="com.example.xuxiaopeng002.myapplication.activity.WelcomeActivity"
             android:theme="@style/StarActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,6 +55,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.xuxiaopeng002.myapplication.util.ChooserPicHelper$FileChooserActivity"
+            android:theme="@style/ActivityDialogTranslucent" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths1" />
+        </provider>
     </application>
 
 </manifest>

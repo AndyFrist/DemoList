@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <files-path name="my_images" path="images"/>
+    <paths>
+        <root-path
+            name="camera_photos"
+            path="" />
+    </paths>
+    <paths>
+        <external-path
+            name="files_root"
+            path="Android/data/com.example.ex_xuxiaopeng002.myapplication/" />
+        <external-path
+            name="external_storage_root"
+            path="." />
+    </paths>
+    <paths>
+        <external-path
+            name="files_root"
+            path="Android/data/com.example.ex_xuxiaopeng002.myapplication/" />
+        <external-path
+            name="external_storage_root"
+            path="." />
+    </paths>
+</resources>

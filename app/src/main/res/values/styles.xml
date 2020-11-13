@@ -13,4 +13,28 @@
     <style name="StarActivity" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/main_bitmap_splash_bg</item> //闪屏页图片
     </style>
+
+    <style name="style_pic_text_item">
+        <item name="android:layout_marginBottom">@dimen/size_01</item>
+        <item name="android:textColor">@color/color333333</item>
+        <item name="android:textSize">@dimen/dp_15</item>
+        <item name="android:background">@color/colorffffff</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_40</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ActivityDialogTranslucent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
 </resources>
